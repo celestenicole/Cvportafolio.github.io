@@ -5,11 +5,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+.card {
+  min-height: 150px;
 
+}
 body {
   font-family: "Poppins", serif;
-  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.canva.com%2Fes_mx%2Ffondos-pantalla-celular%2Fplantillas%2F&psig=AOvVaw0YHKkGlpjkpoRv-t4qtEtF&ust=1739951338025000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiyuf7dzIsDFQAAAAAdAAAAABAE");
-  background-color: rgba(141, 98, 104, 0.8);
   background-color: #e99c9c;
 }
 
@@ -54,7 +55,7 @@ body {
 .section-title {
   font-size: 2.25rem;
   font-weight: 600;
-  color: #F7F7F7;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 3px;
   padding: 0.5rem 1.5rem;
@@ -214,34 +215,49 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding-left: 3rem;
+  padding-top: 1.5rem;
 }
 
-.timeline-simple::before {
-  content: '';
-  position: absolute;
-  left: 6px;
-  top: 0;
-  height: 100%;
-  width: 2px;
-  background-color: #ca294c;
-}
 
+/* Efecto de tarjetas flotantes */
+
+/* Efecto hover para resaltar cada tarjeta */
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
 .timeline-item {
+  flex-direction: column;
+  justify-content: center;
+  
+  display: flex;
+  width: 100%;
+  min-height: 150px;
+  background: #f38787;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   position: relative;
-  padding-bottom: 1rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+ 
 }
-
+/* Puntos de conexión (opcional) */
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -3rem;
-  top: 6px;
-  width: 14px;
-  height: 14px;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #c44040, #e99c9c);
   border-radius: 50%;
-  background-color: #0f0f0f;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
+.timeline-item h3, .timeline-item p {
+  color: #131313 !important; 
+  opacity: 1 !important; 
+}
 .text-light-50 {
   color: rgba(14, 14, 14, 0.5);
 }
@@ -251,9 +267,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .timeline-simple {
-    padding-left: 2rem;
-  }
+  
   
   .timeline-item::before {
     left: -2rem;
@@ -359,7 +373,7 @@ body {
 
 p {
     font-size: 14px;
-    color: #666;
+    color: #1d1c1c;
     margin-top: 5px;
 }
 
