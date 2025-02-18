@@ -9,12 +9,12 @@
 body {
   font-family: "Poppins", serif;
   background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.canva.com%2Fes_mx%2Ffondos-pantalla-celular%2Fplantillas%2F&psig=AOvVaw0YHKkGlpjkpoRv-t4qtEtF&ust=1739951338025000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiyuf7dzIsDFQAAAAAdAAAAABAE");
-  background-color: #eeb8ee;
-  background-color: #df849f;
+  background-color: rgba(141, 98, 104, 0.8);
+  background-color: #e99c9c;
 }
 
 .bg-glass {
-  background: rgba(238, 58, 103, 0.8);
+  background: rgba(241, 123, 123, 0.8);
   border-radius: 0 0 26px 26px;
   border: 4px solid rgba(221, 162, 186, 0.603);
 }
@@ -22,12 +22,12 @@ body {
 /*-- Navbar --*/
 
 .navbar-nav .nav-item .nav-link {
-  color: #814e4e;
+  color: #c44040;
   font-weight: 600;
 }
 
 .navbar-nav .nav-item .nav-link:hover{
-  color: #925984;
+  color: #f8eff0;
 }
 
 .offcanvas-header {
@@ -36,7 +36,7 @@ body {
 
 @media(max-width: 991px) {
   .sidebar {
-    background: rgba(19, 19, 19, 0.8);
+    background:  #c99a9a;
     backdrop-filter: blur(10px);
   }
 }
@@ -107,28 +107,95 @@ body {
 
 /*-- Skills --*/
 
-.badge-dark-custom {
-  background-color: rgba(52, 209, 236, 0.1);
-  border: 1px solid rgba(231, 18, 71, 0.6);
-  color: #181717;
-  font-size: 0.9rem;
-  padding: 0.6rem 1rem;
-  border-radius: 20px;
-  transition: background-color 0.2s ease;
-}
-
-.badge-dark-custom:hover {
-  background-color: #d4285c;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
 .skills-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
+  perspective: 1000px; 
 }
+
+
+.badge-dark-custom {
+  background-color: rgba(52, 209, 236, 0.1);
+  border: 1px solid rgba(231, 18, 71, 0.6);
+  color: #181717;
+  font-size: 1rem;
+  padding: 0.8rem 1.3rem;
+  border-radius: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  transform-style: preserve-3d;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+
+.badge-dark-custom:hover {
+  transform: scale(1.1) rotateX(10deg) rotateY(-10deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fotoperfil {
+  position: relative;
+  width: 220px;
+  height: auto;
+  border-radius: 12px; 
+  border: 2px solid rgba(138, 124, 151, 0.5); 
+  box-shadow: 
+    0px 4px 12px rgba(0, 0, 0, 0.25),
+    inset 0px 0px 8px rgba(255, 255, 255, 0.1);  interna */
+  filter: brightness(1) contrast(1.08) saturate(1.1); 
+  transition: 
+    transform 0.4s ease-out, 
+    box-shadow 0.4s ease-out, 
+    filter 0.4s ease-out;
+}
+
+
+.fotoperfil:hover {
+  transform: scale(1.06); 
+  box-shadow: 
+    0px 6px 20px rgba(0, 0, 0, 0.3), 
+    inset 0px 0px 12px rgba(255, 255, 255, 0.15);
+  filter: brightness(1.05) contrast(1.12) saturate(1.15);
+}
+
+.fotoperfil::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 12px;
+  opacity: 0.3;
+  transition: opacity 0.4s ease-in-out;
+}
+
+
+.fotoperfil:hover::before {
+  opacity: 0.5;
+}
+
 
 .skill-title {
   font-size: 1.5rem;
@@ -196,9 +263,49 @@ body {
 /*-- Card --*/
 
 .card-portfolio {
-  background: rgba(241, 38, 106, 0.6);
-  border-radius: 0 0 26px 26px;
-  border: 2px solid rgba(3, 3, 3, 0.8);
+  background: rgba(250, 95, 95, 0.8);
+  border-radius: 0 0 26px 26px; 
+  border: 2px solid rgba(3, 3, 3, 0.6); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.card-portfolio:hover {
+  transform: translateY(-5px) scale(1.05); 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
+  border-color: rgba(3, 3, 3, 0.8); 
+}
+
+
+.card-portfolio::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+
+.card-portfolio:hover::before {
+  opacity: 1;
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.card-portfolio:hover {
+  animation: pulse 0.6s ease-in-out;
 }
 
 .skills-section .badge {
@@ -215,7 +322,7 @@ body {
 }
 
 .contacto-box {
-    background: #fff;
+    background: #e9c0d0;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -231,15 +338,16 @@ body {
 
 .contacto-icon {
     font-size: 28px;
-    color: #d9534f;
+    color:  #d9534f;
     margin-bottom: 10px;
 }
 
 .contacto-text {
-    font-size: 14px;
+    font-size: 13px;
     color: #d9534f;
     font-weight: bold;
     text-decoration: none;
+   
 }
 
 .contacto-text:hover {
@@ -259,5 +367,5 @@ footer {
   border-top: 1px solid rgba(25, 35, 122, 0.2);
   font-weight: 500;
   margin-bottom: 0;
-  background-color: rgba(238, 58, 103, 0.8);
+  background-color: rgba(250, 95, 95, 0.8);
 }
