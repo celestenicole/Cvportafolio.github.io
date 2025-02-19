@@ -1,5 +1,12 @@
 1. Construi mi CV utilizando HTML y CSS.
    
+   LINK DE MI PAGINA WEB
+
+   
+   - https://celestenicole.github.io/Cvportafolio.github.io/
+  
+     
+   
 -Contiene  barra de navegación,  portafolio, sección de educación,
 sección de experiencia y footer.
 
